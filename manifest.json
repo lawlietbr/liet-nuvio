@@ -1,0 +1,64 @@
+{
+  "name": "Liet Nuvio",
+  "version": "1.0.0",
+  "scrapers": [
+    {
+      "id": "mywallpaper",
+      "name": "My Wallpaper",
+      "description": "CDN brasileiro de animes",
+      "version": "1.0.0",
+      "author": "lawlietbr",
+      "supportedTypes": [
+        "tv"
+      ],
+      "filename": "providers/mywallpapercdn.js",
+      "enabled": true,
+      "logo": "https://image2url.com/r2/default/images/1773218651086-4a0ea24e-6e2b-4a22-ab18-8cb28d1b6f23.png",
+      "contentLanguage": [
+        "pt-br"
+      ],
+      "formats": [
+        "hls",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true,
+      "tags": [
+        "anime"
+      ]
+    },
+    {
+      "id": "doramogo",
+      "name": "Doramogo",
+      "description": "Doramogo - Doramas Coreanos Legendados e Dublados",
+      "version": "1.0.0",
+      "author": "baseado em mywallpapercdn",
+      "supportedTypes": [
+        "tv",
+        "movie"
+      ],
+      "filename": "providers/doramogo.js",
+      "enabled": true,
+      "logo": "https://www.doramogo.net/assets/doramogo/images/apple-touch-icon.webp?version=200.50.10",
+      "contentLanguage": [
+        "pt-br"
+      ],
+      "formats": [
+        "hls",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true,
+      "tags": [
+        "dorama",
+        "k-drama",
+        "coreano",
+        "asiatico",
+        "legendado",
+        "dublado"
+      ]
+    }
+  ]
+}
