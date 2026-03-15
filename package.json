@@ -1,0 +1,21 @@
+{
+  "name": "Liet Nuvio",
+  "version": "1.0.0",
+  "description": "Repositório brasileiro para Nuvio",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "build:all": "node build.js",
+    "build:watch": "nodemon --watch src --ext js --exec 'node build.js'"
+  },
+  "dependencies": {
+    "cheerio-without-node-native": "^0.20.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.2",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["nuvio", "streaming", "plugins"],
+  "author": "lawlietbr",
+  "license": "MIT"
+}
