@@ -26,7 +26,7 @@
 
 **Copie esta URL e cole no Nuvio:**
 
-[![Copiar URL do Repositório](https://img.shields.io/badge/📋_COPIAR_URL-000000?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/lawlietbr/lietrepo/main/builds/repo.json)
+[![Copiar URL do Repositório](https://img.shields.io/badge/📋_COPIAR_URL-000000?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/lawlietbr/liet-nuvio/refs/heads/main/manifest.json)
 
 </div>
 
