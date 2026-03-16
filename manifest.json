@@ -11,7 +11,7 @@
       "supportedTypes": [
         "tv"
       ],
-      "filename": "providers/mywallpapercdn.js",
+      "filename": "providers/mywallpaper.js",
       "enabled": true,
       "logo": "https://image2url.com/r2/default/images/1773218651086-4a0ea24e-6e2b-4a22-ab18-8cb28d1b6f23.png",
       "contentLanguage": [
