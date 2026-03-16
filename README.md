@@ -52,9 +52,6 @@ Só mantenha os créditos!
 
 # Relacionados
 
-Projeto inspirado no saimuelrepo.
-
-Repositórios de referência:  
 - [![Nuvio Tv](https://img.shields.io/badge/Nuvio_Tv-FF6B6B?style=for-the-badge&logo=github)](https://github.com/NuvioMedia/NuvioTV)  
 - [![Nuvio Mobile](https://img.shields.io/badge/Nuvio_Mobile-GitHub-7289DA?style=for-the-badge&logo=github)](https://github.com/NuvioMedia/NuvioMobile)
 - [![Nuvio App](https://img.shields.io/badge/Nuvio_App-2196F3?style=for-the-badge&logo=android)](https://nuvioapp.space/)  
