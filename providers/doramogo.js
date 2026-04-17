@@ -29,42 +29,6 @@ async function testUrl(url) {
     }
 }
 
-async function extractQualitiesFromM3u8(url) {
-    try {
-        const response = await fetch(url, { headers: HEADERS });
-        const content = await response.text();
-        
-        const qualities = [];
-        const lines = content.split('\n');
-        const resolutionPattern = /RESOLUTION=(\d+)x(\d+)/;
-        
-        for (let i = 0; i < lines.length; i++) {
-            const line = lines[i];
-            const match = resolutionPattern.exec(line);
-            
-            if (match) {
-                const height = parseInt(match[2]);
-                let streamUrl = lines[i + 1]?.trim();
-                
-                if (streamUrl && !streamUrl.startsWith('http')) {
-                    const baseUrl = url.substring(0, url.lastIndexOf('/') + 1);
-                    streamUrl = streamUrl.startsWith('/') 
-                        ? new URL(streamUrl, url).href 
-                        : baseUrl + streamUrl;
-                }
-                
-                if (streamUrl && streamUrl.startsWith('http')) {
-                    qualities.push({ url: streamUrl, height });
-                }
-            }
-        }
-        
-        return qualities;
-    } catch {
-        return [];
-    }
-}
-
 async function getTMDBTitle(tmdbId, mediaType) {
     const cacheKey = `${tmdbId}_${mediaType}`;
     if (CACHE[cacheKey]) return CACHE[cacheKey];
@@ -148,48 +112,32 @@ async function getStreams(tmdbId, mediaType, season, episode) {
 
     const slugVariations = generateSlugVariations(title, targetSeason, ano);
 
-    const masterUrls = [];
-    const seen = new Set();
+    const streams = [];
 
     for (const slug of slugVariations) {
         const firstLetter = slug.charAt(0).toUpperCase() || 'T';
 
-        let masterUrl;
+        let streamUrl;
         if (mediaType === 'movie') {
-            masterUrl = `${CDN_PROXY}/${firstLetter}/${slug}/stream/stream.m3u8?nocache=${timestamp}`;
+            streamUrl = `${CDN_PROXY}/${firstLetter}/${slug}/stream/stream.m3u8?nocache=${timestamp}`;
         } else {
-            masterUrl = `${CDN_PROXY}/${firstLetter}/${slug}/${seasonPadded}-temporada/${epPadded}/stream.m3u8?nocache=${timestamp}`;
+            streamUrl = `${CDN_PROXY}/${firstLetter}/${slug}/${seasonPadded}-temporada/${epPadded}/stream.m3u8?nocache=${timestamp}`;
         }
         
-        if (!seen.has(masterUrl)) {
-            seen.add(masterUrl);
-            masterUrls.push(masterUrl);
+        if (await testUrl(streamUrl)) {
+            streams.push({
+                url: streamUrl,
+                headers: HEADERS,
+                name: 'Doramogo 1080p',
+                title: mediaType === 'movie' ? title : `${title} S${targetSeason} EP${targetEpisode}`,
+                quality: 1080,
+                type: 'hls'
+            });
+            break;
         }
     }
 
-    const allStreams = [];
-
-    for (const masterUrl of masterUrls) {
-        if (await testUrl(masterUrl)) {
-            const qualities = await extractQualitiesFromM3u8(masterUrl);
-            
-            for (const qual of qualities) {
-                const qualityName = `${qual.height}p`;
-                allStreams.push({
-                    url: qual.url,
-                    headers: HEADERS,
-                    name: `Doramogo - ${qualityName}`,
-                    title: mediaType === 'movie' ? title : `${title} S${targetSeason} EP${targetEpisode}`,
-                    quality: qual.height,
-                    type: 'hls'
-                });
-            }
-        }
-    }
-
-    allStreams.sort((a, b) => (b.quality || 0) - (a.quality || 0));
-    
-    return allStreams;
+    return streams;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
