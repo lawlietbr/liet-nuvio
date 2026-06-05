@@ -1,0 +1,120 @@
+{
+  "name": "Liet Nuvio",
+  "version": "1.0.0",
+  "scrapers": [
+    {
+      "id": "pomfy",
+      "name": "Pomfy",
+      "description": "Filmes e séries em 1080p via Pomfy API",
+      "version": "1.0.0",
+      "author": "lawlietbr, saimuelbr",
+      "supportedTypes": [
+        "tv",
+        "movie"
+      ],
+      "filename": "src/pomfy/index.js",
+      "enabled": true,
+      "logo": "https://pomfy.online/pomfylogofullcolor.png",
+      "contentLanguage": [
+        "pt-br"
+      ],
+      "formats": [
+        "hls",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true,
+      "tags": [
+        "filmes",
+        "séries"
+      ]
+    },
+    {
+      "id": "mywallpaper",
+      "name": "My Wallpaper",
+      "description": "CDN brasileiro de animes",
+      "version": "2.0.0",
+      "author": "lawlietbr",
+      "supportedTypes": [
+        "tv"
+      ],
+      "filename": "src/mywallpaper/index.js",
+      "enabled": true,
+      "logo": "https://image2url.com/r2/default/images/1773218651086-4a0ea24e-6e2b-4a22-ab18-8cb28d1b6f23.png",
+      "contentLanguage": [
+        "pt-br"
+      ],
+      "formats": [
+        "hls",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true,
+      "tags": [
+        "anime"
+      ]
+    },
+    {
+      "id": "doramogo",
+      "name": "Doramogo",
+      "description": "Diversidade de conteúdos em 1080p",
+      "version": "2.0.0",
+      "author": "lawlietbr",
+      "supportedTypes": [
+        "tv",
+        "movie"
+      ],
+      "filename": "src/doramogo/index.js",
+      "enabled": true,
+      "logo": "https://www.doramogo.net/assets/doramogo/images/apple-touch-icon.webp?version=200.50.10",
+      "contentLanguage": [
+        "pt-br"
+      ],
+      "formats": [
+        "hls",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true,
+      "tags": [
+        "dorama",
+        "animes",
+        "series",
+        "filmes",
+        "legendado",
+        "dublado"
+      ]
+    },
+    {
+      "id": "myembed",
+      "name": "MyEmbed",
+      "description": "API de filmes e séries",
+      "version": "1.0.0",
+      "author": "lawlietbr",
+      "supportedTypes": [
+        "tv",
+        "movie"
+      ],
+      "filename": "src/myembed/index.js",
+      "enabled": true,
+      "logo": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KICA8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzFhMWExYSIgcng9IjEwIiByeT0iMTAiIC8+CiAgPHRleHQgeD0iNTAiIHk9IjY1IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNDAiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5NQjwvdGV4dD4KPC9zdmc+",
+      "contentLanguage": [
+        "pt-br"
+      ],
+      "formats": [
+        "hls",
+        "m3u8"
+      ],
+      "limited": false,
+      "disabledPlatforms": [],
+      "supportsExternalPlayer": true,
+      "tags": [
+        "player",
+        "embed"
+      ]
+    }
+  ]
+}
